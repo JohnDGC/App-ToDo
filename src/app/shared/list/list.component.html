@@ -1,0 +1,21 @@
+<div class="todo_app-search-container mb-2">
+  <input type="text" class="form-control me-2" placeholder="Find task..." [(ngModel)]="find"  />
+</div>
+<ul class="list-group list-container">
+  <ng-container *ngFor="let task of (taskList | find: find)">
+    <li class="list-group-item d-flex justify-content-between" (click)="taskSelected(task)" [ngClass]="{'alert alert-danger': task === selected}">
+      <span> {{task.description}} </span>
+      <div class="btn-group">
+        <button class="btn  btn-sm" id="btn-update" data-bs-toggle="modal" data-bs-target="#exampleModal"
+          (click)="openForEdit(task)">
+          <i class="fa fa-edit">U</i>
+        </button>
+        <button class="btn  btn-sm" id="btn-delete" (click)="deleteTask(task.id)">
+          <i class="fa fa-edit">D</i>
+        </button>
+      </div>
+    </li>
+  </ng-container>
+</ul>
+<!-- (click)="openForEdit(task)" -->
+<!-- [class.active]="task == " -->

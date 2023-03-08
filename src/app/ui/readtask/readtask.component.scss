@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .todo_app{
+    &-search-container {
+      display: flex;
+      .btn-search {
+        background-color:adjust-hue($color: #581a96, $degrees: -10);
+        color: whitesmoke;
+      }
+    }
+
+    &-create-task-action {
+      .btn-search {
+        background-color:adjust-hue($color: #581a96, $degrees: -10);
+        color: whitesmoke;
+      }
+    }
+  }
+}

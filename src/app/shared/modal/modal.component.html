@@ -1,0 +1,35 @@
+<!-- <div class="todo_app-create-container-task mt-2 mb-3" id="exampleModal">
+  <form action="">
+    <label for="">Tarea</label>
+    <input type="text" class="form-control" name="taskName" [ngModel]="selection" [(ngModel)]="taskName" placeholder="Ingresa tu tarea">
+    <div class="d-flex justify-content-end mt-2">
+      <button type="submit" (click)="sendEvent()" class="btn btn-info">Registrar tarea</button>
+      <button type="submit" class="btn btn-info">Actualizar tarea</button>
+    </div>
+  </form>
+</div> -->
+
+<form action="">
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Task</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" class="form-control" name="taskName" [ngModel]="selectionTask?.description"
+            [(ngModel)]="taskName" placeholder="Ingresa tu tarea">
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button *ngIf="!selectionTask" type="submit" id="btn-search" class="btn" data-bs-dismiss="modal"
+            (click)="sendEvent()">Save task</button>
+          <button *ngIf="selectionTask" type="submit" id="btn-search" class="btn" data-bs-dismiss="modal"
+            (click)="updateTask(taskName)">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
